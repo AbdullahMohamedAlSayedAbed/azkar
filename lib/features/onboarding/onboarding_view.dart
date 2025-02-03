@@ -16,7 +16,7 @@ class OnboardingView extends StatefulWidget {
 class _OnboardingViewState extends State<OnboardingView> {
   int currentPage = 0;
 
-   List<Map<String, String>> onboardingData = [
+  List<Map<String, String>> onboardingData = [
     {
       "image": "assets/images/IMG-20241213-WA0008.jpg",
       "title": "ابدأ يومك بالأذكار",
@@ -34,8 +34,6 @@ class _OnboardingViewState extends State<OnboardingView> {
       "description": "الحصول على إشعارات يومية لتذكيرك بالأذكار."
     },
   ];
-
-
 
   PageController? controller;
   @override
@@ -112,13 +110,10 @@ class _OnboardingViewState extends State<OnboardingView> {
                           );
                           currentPage = controller!.page!.toInt();
                         });
-                        
                       }
                     },
                     child: Text(
-                      currentPage == 2
-                          ? "إنهاء"
-                          : "التالي",
+                      currentPage == 2 ? "إنهاء" : "التالي",
                       style: const TextStyle(
                         fontSize: 18,
                         color: Colors.white,
@@ -134,8 +129,9 @@ class _OnboardingViewState extends State<OnboardingView> {
       ),
     );
   }
-    void navigateToNextScreen() {
-    UserStorage.saveData(key: isVisitedOnBoarding, value: true);
+
+  void navigateToNextScreen() {
+    Preferences.saveData(key: isVisitedOnBoarding, value: true);
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => const HomeView()),

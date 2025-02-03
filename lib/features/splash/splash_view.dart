@@ -32,7 +32,7 @@ class _SplashViewState extends State<SplashView> {
     return Future.delayed(
       const Duration(seconds: 4),
       () {
-        final bool isVisited = UserStorage.getData(key: isVisitedOnBoarding);
+        final bool isVisited = Preferences.getData(key: isVisitedOnBoarding);
         Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) {
             return !isVisited ? const OnboardingView() : const HomeView();

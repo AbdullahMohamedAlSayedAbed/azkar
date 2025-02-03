@@ -9,7 +9,7 @@ void main() async {
   await NotificationHelper.initializeNotifications();
 
   await ScheduleAzkarNotifications().scheduleMorningAndEveningNotifications();
-  await UserStorage.init();
+  await Preferences.init();
   runApp(const Azkar());
 }
 
