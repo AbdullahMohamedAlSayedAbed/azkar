@@ -1,4 +1,4 @@
-name: اذكار
+name: Flutter CI/CD
 
 on:
   push:
