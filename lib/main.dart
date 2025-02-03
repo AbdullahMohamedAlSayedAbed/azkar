@@ -1,9 +1,14 @@
+import 'package:azkar/core/Services/notifications_helper.dart';
+import 'package:azkar/core/Services/schedule_notifications.dart';
 import 'package:azkar/user_storage.dart';
 import 'package:azkar/features/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await NotificationHelper.initializeNotifications();
+
+  await ScheduleAzkarNotifications().scheduleMorningAndEveningNotifications();
   await UserStorage.init();
   runApp(const Azkar());
 }

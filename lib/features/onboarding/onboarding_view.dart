@@ -1,5 +1,5 @@
 import 'package:azkar/constants.dart';
-import 'package:azkar/features/Auth/views/sign_in_view.dart';
+import 'package:azkar/features/home/views/home_view.dart';
 import 'package:azkar/user_storage.dart';
 import 'package:azkar/features/onboarding/widgets/custom_dot_indicator.dart';
 import 'package:azkar/features/onboarding/widgets/custom_skip_button.dart';
@@ -18,18 +18,18 @@ class _OnboardingViewState extends State<OnboardingView> {
 
    List<Map<String, String>> onboardingData = [
     {
-      "image": "images/IMG-20241213-WA0008.jpg",
+      "image": "assets/images/IMG-20241213-WA0008.jpg",
       "title": "ابدأ يومك بالأذكار",
       "description":
           "أذكار المسلم تساعدك على تذكر الله دائمًا، وتبقيك مطمئنًا طوال اليوم."
     },
     {
-      "image": "images/IMG-20241213-WA0009.jpg",
+      "image": "assets/images/IMG-20241213-WA0009.jpg",
       "title": "قراءة الأذكار بسهولة",
       "description": "واجهة بسيطة وسهلة تتيح لك قراءة الأذكار في أي وقت."
     },
     {
-      "image": "images/IMG-20241213-WA0010.jpg",
+      "image": "assets/images/IMG-20241213-WA0010.jpg",
       "title": "تذكير يومي",
       "description": "الحصول على إشعارات يومية لتذكيرك بالأذكار."
     },
@@ -138,7 +138,7 @@ class _OnboardingViewState extends State<OnboardingView> {
     UserStorage.saveData(key: isVisitedOnBoarding, value: true);
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const SignInView()),
+      MaterialPageRoute(builder: (context) => const HomeView()),
     );
   }
 }

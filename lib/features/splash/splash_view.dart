@@ -1,6 +1,5 @@
 import 'package:azkar/constants.dart';
 import 'package:azkar/user_storage.dart';
-import 'package:azkar/features/Auth/views/sing_up_view.dart';
 import 'package:azkar/features/home/views/home_view.dart';
 import 'package:azkar/features/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +24,8 @@ class _SplashViewState extends State<SplashView> {
     return Scaffold(
         backgroundColor: Colors.teal.shade100,
         body: Center(
-            child: Lottie.asset('images/Animation - 1733854700731.json')));
+            child:
+                Lottie.asset('assets/images/Animation - 1733854700731.json')));
   }
 
   Future<Null> navigateToHome() {
@@ -33,10 +33,9 @@ class _SplashViewState extends State<SplashView> {
       const Duration(seconds: 4),
       () {
         final bool isVisited = UserStorage.getData(key: isVisitedOnBoarding);
-        final bool isSignIn = UserStorage.getData(key: isAuth);
         Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) {
-            return !isVisited?  const OnboardingView() : isSignIn ? const HomeView() : const SingUpView();
+            return !isVisited ? const OnboardingView() : const HomeView();
           },
         ));
       },
