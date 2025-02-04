@@ -61,7 +61,6 @@ class NotificationHelper {
         matchDateTimeComponents: DateTimeComponents.time,
       );
     } catch (e) {
-      print('Error scheduling notification: $e');
     }
   }
 }

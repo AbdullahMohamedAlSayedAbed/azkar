@@ -15,30 +15,33 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    navigateToHome();
     super.initState();
+    navigateToHome();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.teal.shade100,
-        body: Center(
-            child:
-                Lottie.asset('assets/images/Animation - 1733854700731.json')));
+      backgroundColor: Colors.teal.shade100,
+      body: Center(
+        child: Lottie.asset('assets/images/Animation - 1733854700731.json'),
+      ),
+    );
   }
 
-  Future<Null> navigateToHome() {
-    return Future.delayed(
-      const Duration(seconds: 4),
-      () {
-        final bool isVisited = Preferences.getData(key: isVisitedOnBoarding);
-        Navigator.pushReplacement(context, MaterialPageRoute(
-          builder: (context) {
-            return !isVisited ? const OnboardingView() : const HomeView();
-          },
-        ));
-      },
+  Future<void> navigateToHome() async {
+    await Future.delayed(const Duration(seconds: 4));
+
+    if (!mounted) return; 
+
+    final bool isVisited = Preferences.getData(key: isVisitedOnBoarding);
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) =>
+            isVisited ? const HomeView() : const OnboardingView(),
+      ),
     );
   }
 }
