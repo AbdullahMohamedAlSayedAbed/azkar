@@ -5,11 +5,9 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:azkar/main.dart';
-@Skip('Skipping test for now')
 void main() {
   testWidgets('Azkar app test', (WidgetTester tester) async {
 
