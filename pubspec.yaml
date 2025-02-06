@@ -79,7 +79,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 icons_launcher:
-  image_path: "assets/images/download.jpg"
+  image_path: "assets/images/IMG-20241213-WA0010.jpg"
   platforms:
     android:
       enable: true
