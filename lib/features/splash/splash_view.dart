@@ -4,6 +4,7 @@ import 'package:azkar/features/home/views/home_view.dart';
 import 'package:azkar/features/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -17,6 +18,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     navigateToHome();
+    requestNotificationPermission();
   }
 
   @override
@@ -43,5 +45,10 @@ class _SplashViewState extends State<SplashView> {
             isVisited ? const HomeView() : const OnboardingView(),
       ),
     );
+  }
+  Future<void> requestNotificationPermission() async {
+    if (await Permission.notification.isDenied) {
+      await Permission.notification.request();
+    }
   }
 }
