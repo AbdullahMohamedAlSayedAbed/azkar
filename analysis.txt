@@ -1,0 +1,18 @@
+Analyzing azkar...                                              
+
+warning - The value of the field '_icons' isn't used - lib\core\constants\app_assets.dart:10:23 - unused_field
+warning - The value of the local variable 'isDark' isn't used - lib\features\allah_names\presentation\views\allah_names_view.dart:49:11 - unused_local_variable
+warning - Unused import: 'package:azkar/features/azkar/data/models/zikr_model.dart' - lib\features\azkar\data\repositories\azkar_repository_impl.dart:7:8 - unused_import
+   info - The import of 'package:flutter/services.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\features\azkar\presentation\views\azkar_list_view.dart:6:8 - unnecessary_import
+warning - The value of the local variable 'theme' isn't used - lib\features\azkar\presentation\widgets\zikr_card.dart:153:11 - unused_local_variable
+warning - Unused import: 'package:azkar/core/constants/app_colors.dart' - lib\features\duas\presentation\views\duas_categories_view.dart:7:8 - unused_import
+warning - The value of the local variable 'isDark' isn't used - lib\features\duas\presentation\views\duas_categories_view.dart:42:11 - unused_local_variable
+warning - Unused import: 'package:flutter_bloc/flutter_bloc.dart' - lib\features\home\presentation\views\home_view.dart:6:8 - unused_import
+warning - Unused import: 'package:azkar/features/settings/cubit/settings_cubit.dart' - lib\features\home\presentation\views\home_view.dart:11:8 - unused_import
+warning - The value of the local variable 'isDark' isn't used - lib\features\home\presentation\views\home_view.dart:21:11 - unused_local_variable
+warning - The value of the local variable 'isDark' isn't used - lib\features\prayer_times\presentation\views\prayer_times_view.dart:31:11 - unused_local_variable
+  error - The getter 'rtl' isn't defined for the type 'TextDirection' - lib\features\prayer_times\presentation\views\prayer_times_view.dart:34:36 - undefined_getter
+warning - The value of the local variable 'theme' isn't used - lib\features\prayer_times\presentation\views\prayer_times_view.dart:116:11 - unused_local_variable
+warning - The value of the local variable 'isDark' isn't used - lib\features\settings\presentation\views\settings_view.dart:17:11 - unused_local_variable
+
+14 issues found. (ran in 3.3s)

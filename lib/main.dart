@@ -1,30 +1,31 @@
-import 'package:azkar/core/Services/notifications_helper.dart';
-import 'package:azkar/core/Services/schedule_notifications.dart';
-import 'package:azkar/user_storage.dart';
-import 'package:azkar/features/splash/splash_view.dart';
+/// Azkar App Main Entry Point
+/// Islamic app with azkar, Quran, prayer times, and more
+library;
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:azkar/injection_container.dart';
+import 'package:azkar/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await NotificationHelper.initializeNotifications();
 
-  await ScheduleAzkarNotifications().scheduleMorningAndEveningNotifications();
-  await Preferences.init();
-  runApp(const Azkar());
-}
+  // Set system UI overlay style
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
 
-class Azkar extends StatelessWidget {
-  const Azkar({super.key});
+  // Set preferred orientations
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        useMaterial3: false,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const SplashView(),
-    );
-  }
+  // Initialize dependencies
+  await initDependencies();
+
+  runApp(const AzkarApp());
 }
